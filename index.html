@@ -1,120 +1,233 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PizzAI — Politique de Confidentialité</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', sans-serif; background: #1a1410; color: #f5e6d3; line-height: 1.7; }
-    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
-    .logo { text-align: center; margin-bottom: 40px; }
-    .logo span { font-size: 48px; }
-    .logo h1 { font-size: 28px; font-weight: 700; color: #e85d24; margin-top: 8px; }
-    .logo p { font-size: 14px; color: #a89480; margin-top: 4px; }
-    h2 { font-size: 20px; font-weight: 700; color: #e85d24; margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(232,93,36,0.2); }
-    h3 { font-size: 16px; font-weight: 700; color: #f5e6d3; margin: 20px 0 8px; }
-    p, li { font-size: 15px; color: #c4b5a4; margin-bottom: 8px; }
-    ul { padding-left: 20px; margin-bottom: 12px; }
-    li { margin-bottom: 4px; }
-    a { color: #e85d24; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .date { text-align: center; font-size: 13px; color: #a89480; margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(168,148,128,0.2); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PizzAI — Politique de Confidentialité</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #1a1410;
+            color: #e8e0d4;
+            line-height: 1.7;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 24px 60px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .header .emoji {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: #d4a44a;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            color: #b8a88a;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #d4a44a;
+            margin-top: 36px;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(212, 164, 74, 0.2);
+        }
+
+        h3 {
+            font-size: 16px;
+            color: #c9a85c;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #d0c8b8;
+        }
+
+        ul {
+            margin: 8px 0 16px 24px;
+            color: #d0c8b8;
+        }
+
+        ul li {
+            margin-bottom: 6px;
+        }
+
+        a {
+            color: #d4a44a;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            color: #e8e0d4;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(212, 164, 74, 0.2);
+            text-align: center;
+            color: #8a7e6e;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #b8a88a;
+        }
+
+        #suppression {
+            scroll-margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">
-      <span>🍕</span>
-      <h1>PizzAI</h1>
-      <p>Politique de Confidentialité</p>
+    <div class="container">
+
+        <div class="header">
+            <span class="emoji">🍕</span>
+            <h1>PizzAI</h1>
+            <div class="subtitle">Politique de Confidentialité</div>
+        </div>
+
+        <!-- 1. Éditeur -->
+        <h2>1. Éditeur de l'application</h2>
+        <p>
+            <span class="highlight">ZornTek</span><br>
+            Contact : <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a>
+        </p>
+
+        <!-- 2. Données collectées -->
+        <h2>2. Données collectées</h2>
+
+        <h3>2.1 Données de compte</h3>
+        <p>Lors de la création de votre compte, nous collectons :</p>
+        <ul>
+            <li>Adresse email</li>
+            <li>Nom d'affichage (facultatif)</li>
+        </ul>
+        <p>Ces données sont nécessaires au fonctionnement du service (authentification, sauvegarde de vos recettes).</p>
+
+        <h3>2.2 Données d'utilisation</h3>
+        <p>Nous enregistrons des compteurs d'utilisation quotidiens (nombre de messages Chef IA, nombre d'analyses photo) afin de gérer les quotas selon votre plan (Free, Pro, Master). Ces compteurs sont réinitialisés chaque jour.</p>
+
+        <h3>2.3 Recettes sauvegardées</h3>
+        <p>Les recettes que vous sauvegardez sont stockées dans votre espace personnel et ne sont accessibles que par vous.</p>
+
+        <h3>2.4 Photos analysées</h3>
+        <p>Les photos soumises à l'analyse IA sont envoyées à notre serveur pour traitement. Les résultats d'analyse (scores, conseils) ainsi que les photos sont conservés dans votre historique personnel, accessible uniquement par vous.</p>
+        <p>Vous pouvez supprimer vos photos à tout moment depuis l'application. En cas de suppression de votre compte, toutes les photos sont supprimées dans les 30 jours.</p>
+
+        <h3>2.5 Données publicitaires</h3>
+        <p>Pour les utilisateurs du plan Free, des publicités sont affichées via Google AdMob. AdMob peut collecter :</p>
+        <ul>
+            <li>Identifiant publicitaire (Android Advertising ID)</li>
+            <li>Données d'interaction avec les publicités</li>
+            <li>Informations techniques sur l'appareil</li>
+        </ul>
+        <p>Ces données sont gérées par Google conformément à la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">politique de confidentialité de Google</a>. Les utilisateurs Pro et Master ne voient aucune publicité.</p>
+
+        <!-- 3. Finalité -->
+        <h2>3. Finalité du traitement</h2>
+        <ul>
+            <li><span class="highlight">Authentification</span> : vous identifier et sécuriser votre compte</li>
+            <li><span class="highlight">Service</span> : calcul de recettes, chat IA, analyse photo</li>
+            <li><span class="highlight">Quotas</span> : gérer les limites d'utilisation selon votre plan</li>
+            <li><span class="highlight">Abonnement</span> : traiter les paiements via Google Play Billing</li>
+            <li><span class="highlight">Publicité</span> : afficher des publicités pertinentes (plan Free uniquement)</li>
+            <li><span class="highlight">Amélioration</span> : comprendre l'usage global de l'application (statistiques anonymisées)</li>
+        </ul>
+
+        <!-- 4. Sous-traitants -->
+        <h2>4. Sous-traitants</h2>
+        <ul>
+            <li><span class="highlight">Firebase (Google)</span> — authentification, base de données, stockage de fichiers (photos), hébergement des fonctions cloud</li>
+            <li><span class="highlight">Anthropic</span> — traitement IA (Chef IA et Analyse Photo, via Claude)</li>
+            <li><span class="highlight">RevenueCat</span> — gestion des abonnements</li>
+            <li><span class="highlight">Google AdMob</span> — affichage publicitaire (plan Free)</li>
+        </ul>
+        <p>Tous nos sous-traitants sont conformes au RGPD et/ou disposent de clauses contractuelles types.</p>
+
+        <!-- 5. Durée de conservation -->
+        <h2>5. Durée de conservation</h2>
+        <ul>
+            <li><span class="highlight">Données de compte</span> : conservées tant que le compte est actif, supprimées dans les 30 jours suivant la suppression du compte</li>
+            <li><span class="highlight">Compteurs d'utilisation</span> : réinitialisés quotidiennement</li>
+            <li><span class="highlight">Recettes</span> : conservées tant que le compte est actif</li>
+            <li><span class="highlight">Photos</span> : conservées dans votre historique tant que le compte est actif, supprimables individuellement depuis l'application</li>
+        </ul>
+
+        <!-- 6. Vos droits -->
+        <h2>6. Vos droits</h2>
+        <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+        <ul>
+            <li><span class="highlight">Accès</span> : obtenir une copie de vos données</li>
+            <li><span class="highlight">Rectification</span> : corriger vos données inexactes</li>
+            <li><span class="highlight">Suppression</span> : demander la suppression de votre compte et de vos données</li>
+            <li><span class="highlight">Portabilité</span> : recevoir vos données dans un format structuré</li>
+            <li><span class="highlight">Opposition</span> : vous opposer au traitement de vos données</li>
+        </ul>
+        <p>Pour exercer ces droits, contactez-nous à <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a>.</p>
+
+        <!-- 7. Sécurité -->
+        <h2>7. Sécurité</h2>
+        <p>Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données : chiffrement des communications (HTTPS/TLS), authentification sécurisée, règles d'accès strictes à la base de données, et séparation des clés API sensibles côté serveur.</p>
+
+        <!-- 8. Mineurs -->
+        <h2>8. Mineurs</h2>
+        <p>PizzAI n'est pas destiné aux enfants de moins de 16 ans. Nous ne collectons pas sciemment de données de mineurs.</p>
+
+        <!-- 9. Suppression -->
+        <h2 id="suppression">9. Suppression de compte et des données</h2>
+        <p>Vous pouvez demander la suppression de votre compte et de toutes vos données en envoyant un email à <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a> avec l'objet <strong>"Suppression de compte PizzAI"</strong>.</p>
+        <p>Nous procéderons à la suppression dans un délai de 30 jours. Les données supprimées incluent :</p>
+        <ul>
+            <li>Adresse email et données de compte</li>
+            <li>Recettes sauvegardées</li>
+            <li>Photos et historique d'analyses</li>
+            <li>Compteurs d'utilisation</li>
+        </ul>
+        <p><em>Note : les données relatives aux transactions peuvent être conservées par Google Play et RevenueCat conformément à leurs politiques respectives.</em></p>
+
+        <!-- 10. Modifications -->
+        <h2>10. Modifications</h2>
+        <p>Cette politique peut être mise à jour. La date de dernière modification est indiquée ci-dessous. En cas de modification substantielle, une notification sera affichée dans l'application.</p>
+
+        <div class="footer">
+            <p>Dernière mise à jour : 19 mars 2026</p>
+            <p>ZornTek — <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a></p>
+        </div>
+
     </div>
-
-    <h2>1. Éditeur de l'application</h2>
-    <p><strong>ZornTek</strong><br>
-    Contact : <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a></p>
-
-    <h2>2. Données collectées</h2>
-    <h3>2.1 Données de compte</h3>
-    <p>Lors de la création de votre compte, nous collectons :</p>
-    <ul>
-      <li>Adresse email</li>
-      <li>Nom d'affichage (facultatif)</li>
-    </ul>
-    <p>Ces données sont nécessaires au fonctionnement du service (authentification, sauvegarde de vos recettes).</p>
-
-    <h3>2.2 Données d'utilisation</h3>
-    <p>Nous enregistrons des compteurs d'utilisation quotidiens (nombre de messages Chef IA, nombre d'analyses photo) afin de gérer les quotas selon votre plan (Free, Pro, Master). Ces compteurs sont réinitialisés chaque jour.</p>
-
-    <h3>2.3 Recettes sauvegardées</h3>
-    <p>Les recettes que vous sauvegardez sont stockées dans votre espace personnel et ne sont accessibles que par vous.</p>
-
-    <h3>2.4 Photos analysées</h3>
-    <p>Les photos soumises à l'analyse IA sont envoyées à notre serveur pour traitement, puis <strong>supprimées immédiatement</strong> après l'analyse. Elles ne sont ni stockées ni utilisées à d'autres fins.</p>
-
-    <h3>2.5 Données publicitaires</h3>
-    <p>Pour les utilisateurs du plan Free, des publicités sont affichées via Google AdMob. AdMob peut collecter :</p>
-    <ul>
-      <li>Identifiant publicitaire (Android Advertising ID)</li>
-      <li>Données d'interaction avec les publicités</li>
-      <li>Informations techniques sur l'appareil</li>
-    </ul>
-    <p>Ces données sont gérées par Google conformément à la <a href="https://policies.google.com/privacy" target="_blank">politique de confidentialité de Google</a>. Les utilisateurs Pro et Master ne voient aucune publicité.</p>
-
-    <h2>3. Finalité du traitement</h2>
-    <ul>
-      <li><strong>Authentification</strong> : vous identifier et sécuriser votre compte</li>
-      <li><strong>Service</strong> : calcul de recettes, chat IA, analyse photo</li>
-      <li><strong>Quotas</strong> : gérer les limites d'utilisation selon votre plan</li>
-      <li><strong>Abonnement</strong> : traiter les paiements via Google Play Billing</li>
-      <li><strong>Publicité</strong> : afficher des publicités pertinentes (plan Free uniquement)</li>
-      <li><strong>Amélioration</strong> : comprendre l'usage global de l'application (statistiques anonymisées)</li>
-    </ul>
-
-    <h2>4. Sous-traitants</h2>
-    <ul>
-      <li><strong>Firebase (Google)</strong> — authentification, base de données, hébergement des fonctions cloud</li>
-      <li><strong>Anthropic</strong> — traitement IA (Chef IA et Analyse Photo, via Claude Haiku)</li>
-      <li><strong>RevenueCat</strong> — gestion des abonnements</li>
-      <li><strong>Google AdMob</strong> — affichage publicitaire (plan Free)</li>
-    </ul>
-    <p>Tous nos sous-traitants sont conformes au RGPD et/ou disposent de clauses contractuelles types.</p>
-
-    <h2>5. Durée de conservation</h2>
-    <ul>
-      <li><strong>Données de compte</strong> : conservées tant que le compte est actif, supprimées dans les 30 jours suivant la suppression du compte</li>
-      <li><strong>Compteurs d'utilisation</strong> : réinitialisés quotidiennement</li>
-      <li><strong>Recettes</strong> : conservées tant que le compte est actif</li>
-      <li><strong>Photos</strong> : supprimées immédiatement après analyse</li>
-    </ul>
-
-    <h2>6. Vos droits</h2>
-    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
-    <ul>
-      <li><strong>Accès</strong> : obtenir une copie de vos données</li>
-      <li><strong>Rectification</strong> : corriger vos données inexactes</li>
-      <li><strong>Suppression</strong> : demander la suppression de votre compte et de vos données</li>
-      <li><strong>Portabilité</strong> : recevoir vos données dans un format structuré</li>
-      <li><strong>Opposition</strong> : vous opposer au traitement de vos données</li>
-    </ul>
-    <p>Pour exercer ces droits, contactez-nous à <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a>.</p>
-
-    <h2>7. Sécurité</h2>
-    <p>Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données : chiffrement des communications (HTTPS/TLS), authentification sécurisée, règles d'accès strictes à la base de données, et séparation des clés API sensibles côté serveur.</p>
-
-    <h2>8. Mineurs</h2>
-    <p>PizzAI n'est pas destiné aux enfants de moins de 16 ans. Nous ne collectons pas sciemment de données de mineurs.</p>
-
-    <h2 id="suppression">9. Suppression de compte et des données</h2>
-    <p>Vous pouvez demander la suppression de votre compte et de toutes vos données en envoyant un email à <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a> avec l'objet <strong>"Suppression de compte PizzAI"</strong>.</p>
-    <p>Nous procéderons à la suppression dans un délai de <strong>30 jours</strong>. Les données supprimées incluent :</p>
-    <ul>
-      <li>Adresse email et données de compte</li>
-      <li>Recettes sauvegardées</li>
-      <li>Compteurs d'utilisation</li>
-    </ul>
-    <p>Note : les données relatives aux transactions peuvent être conservées par Google Play et RevenueCat conformément à leurs politiques.</p>
-
-    <h2>10. Modifications</h2>
-    <p>Cette politique peut être mise à jour. La date de dernière modification est indiquée ci-dessous. En cas de modification substantielle, une notification sera affichée dans l'application.</p>
+</body>
+</html>
