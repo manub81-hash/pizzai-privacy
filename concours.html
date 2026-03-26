@@ -3,146 +3,281 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PizzAI — Règlement du Concours #PizzAIChallenge</title>
+  <title>Règlement du concours #PizzAIChallenge — PizzAI par ZornTek</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', sans-serif; background: #1a1410; color: #f5e6d3; line-height: 1.7; }
-    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
-    .logo { text-align: center; margin-bottom: 40px; }
-    .logo span { font-size: 48px; }
-    .logo h1 { font-size: 28px; font-weight: 700; color: #e85d24; margin-top: 8px; }
-    .logo p { font-size: 14px; color: #a89480; margin-top: 4px; }
-    .prize-banner { background: linear-gradient(135deg, #e85d24 0%, #d4421a 100%); border-radius: 16px; padding: 24px; text-align: center; margin-bottom: 32px; }
-    .prize-banner h2 { color: #fff; font-size: 22px; border: none; margin: 0 0 8px; padding: 0; }
-    .prize-banner p { color: rgba(255,255,255,0.9); font-size: 15px; margin: 0; }
-    h2 { font-size: 20px; font-weight: 700; color: #e85d24; margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(232,93,36,0.2); }
-    h3 { font-size: 16px; font-weight: 700; color: #f5e6d3; margin: 20px 0 8px; }
-    p, li { font-size: 15px; color: #c4b5a4; margin-bottom: 8px; }
+    :root {
+      --bg: #0d0b09;
+      --card: #161210;
+      --gold: #d4a44a;
+      --cream: #f5f0e8;
+      --muted: #8a7e6d;
+      --fire: #e8653a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg); color: var(--cream);
+      line-height: 1.7; padding: 24px 16px 60px;
+      max-width: 720px; margin: 0 auto;
+    }
+    h1 {
+      font-size: 28px; font-weight: 800; margin-bottom: 8px;
+      color: var(--cream); letter-spacing: -0.5px;
+    }
+    h1 span { color: var(--gold); }
+    h2 {
+      font-size: 18px; font-weight: 700; margin-top: 32px; margin-bottom: 12px;
+      color: var(--gold); letter-spacing: 0.3px;
+    }
+    h3 {
+      font-size: 15px; font-weight: 700; margin-top: 20px; margin-bottom: 8px;
+      color: var(--cream);
+    }
+    p, li { font-size: 14px; color: var(--cream); opacity: 0.85; margin-bottom: 8px; }
     ul, ol { padding-left: 20px; margin-bottom: 12px; }
     li { margin-bottom: 6px; }
-    a { color: #e85d24; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    strong { color: #f5e6d3; }
-    .prize-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-    .prize-table th { text-align: left; padding: 10px 12px; background: rgba(232,93,36,0.15); color: #e85d24; font-size: 14px; border-bottom: 1px solid rgba(232,93,36,0.2); }
-    .prize-table td { padding: 10px 12px; font-size: 14px; color: #c4b5a4; border-bottom: 1px solid rgba(168,148,128,0.1); }
-    .prize-table tr:first-child td { color: #f5e6d3; font-weight: 700; }
-    .steps { counter-reset: step; list-style: none; padding-left: 0; }
-    .steps li { counter-increment: step; padding-left: 36px; position: relative; margin-bottom: 12px; }
-    .steps li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 24px; height: 24px; border-radius: 50%; background: #e85d24; color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; line-height: 24px; text-align: center; }
-    .date { text-align: center; font-size: 13px; color: #a89480; margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(168,148,128,0.2); }
+    strong { color: var(--cream); opacity: 1; }
+    a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(232,101,58,0.15); border: 1px solid rgba(232,101,58,0.3);
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;
+    }
+    .badge span { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--fire); text-transform: uppercase; }
+    .subtitle { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+    .highlight {
+      background: rgba(212,164,74,0.08); border: 1px solid rgba(212,164,74,0.15);
+      border-radius: 12px; padding: 16px; margin: 16px 0;
+    }
+    .prize-box {
+      background: var(--card); border: 1px solid rgba(212,164,74,0.2);
+      border-radius: 14px; padding: 16px; margin: 8px 0;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .prize-box .emoji { font-size: 28px; flex-shrink: 0; }
+    .prize-box .name { font-size: 15px; font-weight: 700; color: var(--cream); }
+    .prize-box .detail { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .separator {
+      height: 1px; margin: 32px 0;
+      background: linear-gradient(90deg, transparent, rgba(212,164,74,0.2), transparent);
+    }
+    .footer { margin-top: 40px; font-size: 12px; color: var(--muted); text-align: center; line-height: 1.8; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+    th, td { padding: 10px 12px; text-align: left; font-size: 13px; border-bottom: 1px solid rgba(138,126,109,0.15); }
+    th { color: var(--gold); font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+    td { color: var(--cream); opacity: 0.85; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">
-      <span>🍕</span>
-      <h1>PizzAI</h1>
-      <p>Règlement du Concours</p>
-    </div>
 
-    <div class="prize-banner">
-      <h2>🔥 #PizzAIChallenge</h2>
-      <p>Gagne un Ooni Koda 12 et des abonnements Master !</p>
-    </div>
-
-    <h2>Article 1 — Organisateur</h2>
-    <p>Le concours « #PizzAIChallenge » est organisé par <strong>ZornTek</strong>ci-après « l'Organisateur ».</p>
-    <p>Contact : <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a></p>
-
-    <h2>Article 2 — Durée</h2>
-    <p>Le concours se déroule du <strong>[DATE DÉBUT]</strong> au <strong>[DATE FIN]</strong> inclus (3 semaines). Toute participation en dehors de cette période ne sera pas prise en compte.</p>
-    <p>Les résultats seront annoncés au plus tard 7 jours après la date de clôture sur le compte Instagram <strong>@pizzai.app</strong>.</p>
-
-    <h2>Article 3 — Conditions de participation</h2>
-    <p>Le concours est ouvert à toute personne physique majeure (18 ans ou plus) résidant en France métropolitaine, dans l'Union Européenne ou en Suisse, à l'exception des employés et proches de l'Organisateur.</p>
-    <p><strong>Conditions préalables :</strong></p>
-    <ul>
-      <li>Disposer d'un compte Instagram actif depuis au moins 30 jours, public pendant la durée du concours</li>
-      <li>Avoir téléchargé l'application PizzAI depuis le Google Play Store</li>
-      <li>Avoir créé un compte PizzAI</li>
-    </ul>
-    <p>La participation est gratuite et sans obligation d'achat. Le plan Free de PizzAI suffit pour participer.</p>
-
-    <h2>Article 4 — Modalités de participation</h2>
-    <ol class="steps">
-      <li>Télécharger l'application <strong>PizzAI</strong> sur le Google Play Store</li>
-      <li>Préparer une pizza en utilisant PizzAI (calculateur et/ou Chef IA)</li>
-      <li>Publier une <strong>photo de votre pizza</strong> sur votre compte Instagram avec :
-        <ul>
-          <li>Un papier visible à côté de la pizza portant la mention <strong>« PizzAI »</strong> et votre <strong>pseudo Instagram</strong></li>
-          <li>Le hashtag <strong>#PizzAIChallenge</strong></li>
-          <li>Le tag <strong>@pizzai.app</strong></li>
-        </ul>
-      </li>
-      <li>Poster en <strong>Story Instagram</strong> une vidéo/photo de votre pizza sortant du four (preuve en temps réel)</li>
-      <li>Publier en <strong>commentaire</strong> de votre post une capture d'écran du score obtenu via la fonctionnalité « Photo IA » de PizzAI</li>
-    </ol>
-    <p>La participation est limitée à <strong>une (1) publication par compte Instagram</strong>.</p>
-
-    <h2>Article 5 — Désignation des gagnants</h2>
-    <p>Les gagnants sont désignés en fonction du <strong>nombre de mentions « J'aime » (likes)</strong> sur leur publication Instagram à la date et heure de clôture du concours.</p>
-    <p>Le classement est établi comme suit :</p>
-
-    <table class="prize-table">
-      <tr><th>Place</th><th>Critère</th><th>Dotation</th></tr>
-      <tr><td>🥇 1er</td><td>Plus grand nombre de likes</td><td>Ooni Koda 12 (valeur ~349 €) + 1 an d'abonnement Master PizzAI</td></tr>
-      <tr><td>🥈 2ème</td><td>2ème plus grand nombre de likes</td><td>6 mois d'abonnement Master PizzAI</td></tr>
-      <tr><td>🥉 3ème</td><td>3ème plus grand nombre de likes</td><td>3 mois d'abonnement Master PizzAI</td></tr>
-      <tr><td>4ème à 10ème</td><td>4ème à 10ème plus grand nombre de likes</td><td>1 mois d'abonnement Master PizzAI</td></tr>
-    </table>
-
-    <p>Valeur commerciale totale estimée des lots : ~400 €. Les lots ne sont ni échangeables, ni remboursables.</p>
-
-    <h2>Article 6 — Mesures anti-fraude</h2>
-    <p>L'Organisateur se réserve le droit de :</p>
-    <ul>
-      <li>Vérifier l'authenticité des participations (papier visible, story en temps réel, screenshot score IA)</li>
-      <li>Disqualifier toute participation utilisant des <strong>likes achetés, bots, faux comptes</strong> ou tout autre mécanisme de manipulation de l'engagement</li>
-      <li>Disqualifier tout compte Instagram créé moins de 30 jours avant le début du concours</li>
-      <li>Exclure toute participation ne respectant pas les conditions de l'Article 4</li>
-      <li>Annuler ou modifier le concours en cas de fraude avérée</li>
-    </ul>
-    <p>Les décisions de l'Organisateur sont définitives et sans appel.</p>
-
-    <h2>Article 7 — Remise des lots</h2>
-    <ul>
-      <li><strong>Ooni Koda 12</strong> : le gagnant sera contacté par message privé Instagram dans les 48h suivant l'annonce des résultats. Il devra fournir une adresse postale en France métropolitaine, UE ou Suisse pour l'expédition. À défaut de réponse sous 7 jours, le lot sera attribué au participant suivant au classement.</li>
-      <li><strong>Abonnements Master</strong> : activés directement dans l'application PizzAI via le compte associé à l'adresse email communiquée par le gagnant.</li>
-    </ul>
-
-    <h2>Article 8 — Propriété intellectuelle et droit à l'image</h2>
-    <p>En participant au concours, vous autorisez l'Organisateur à :</p>
-    <ul>
-      <li>Repartager votre publication (photo + légende) sur le compte Instagram @pizzai.app et les supports de communication de PizzAI</li>
-      <li>Utiliser votre pseudo Instagram dans le cadre de l'annonce des résultats</li>
-    </ul>
-    <p>Vous conservez l'intégralité de vos droits de propriété intellectuelle sur vos photos.</p>
-
-    <h2>Article 9 — Données personnelles</h2>
-    <p>Les données collectées dans le cadre du concours (pseudo Instagram, adresse email, adresse postale du gagnant du Ooni) sont utilisées exclusivement pour la gestion du concours et la remise des lots.</p>
-    <p>Elles ne sont ni cédées ni vendues à des tiers et sont supprimées dans les 30 jours suivant la remise des lots. Pour plus d'informations, consultez notre <a href="https://manub81-hash.github.io/pizzai-privacy/privacy.html">Politique de Confidentialité</a>.</p>
-
-    <h2>Article 10 — Responsabilité</h2>
-    <p>L'Organisateur ne saurait être tenu responsable en cas de :</p>
-    <ul>
-      <li>Dysfonctionnement du réseau Internet, d'Instagram ou du Google Play Store</li>
-      <li>Problème technique empêchant la participation</li>
-      <li>Utilisation frauduleuse du hashtag par des tiers</li>
-      <li>Retard ou perte de colis liés à l'expédition du Ooni Koda 12</li>
-    </ul>
-
-    <h2>Article 11 — Acceptation du règlement</h2>
-    <p>La participation au concours implique l'acceptation pleine et entière du présent règlement. Le non-respect du règlement entraîne l'exclusion du participant.</p>
-
-    <h2>Article 12 — Droit applicable et litiges</h2>
-    <p>Le présent règlement est soumis au droit français. Tout litige sera soumis aux tribunaux compétents du ressort du siège social de l'Organisateur, après tentative de résolution amiable.</p>
-
-    <h2>Article 13 — Dépôt du règlement</h2>
-    <p>Le présent règlement est librement consultable sur <a href="https://manub81-hash.github.io/pizzai-privacy/concours.html">cette page</a> pendant toute la durée du concours et un mois après la remise des lots.</p>
-
-    <div class="date">Dernière mise à jour : 28 février 2026</div>
+  <div class="badge">
+    <span>🔥 Règlement officiel</span>
   </div>
-</body>
-</html>
+
+  <h1><span>#</span>PizzAI Challenge</h1>
+  <p class="subtitle">Règlement complet du concours organisé par ZornTek</p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 1 — Organisateur</h2>
+  <p>Le concours <strong>#PizzAIChallenge</strong> est organisé par <strong>ZornTek</strong>, auto-entreprise en cours d'immatriculation, représentée par Emmanuel Baldo, domiciliée en France.</p>
+  <p>Contact : <a href="/cdn-cgi/l/email-protection#d1b2bebfa5b0b2a591abbea3bfa5b4baffb7a3"><span class="__cf_email__" data-cfemail="d6b5b9b8a2b7b5a296acb9a4b8a2b3bdf8b0a4">[email&#160;protected]</span></a></p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 2 — Durée</h2>
+  <p>Le concours se déroule du <strong>[DATE DÉBUT]</strong> au <strong>[DATE FIN]</strong> inclus, soit une durée de <strong>3 semaines</strong>.</p>
+  <p>Les dates exactes sont affichées dans le compte à rebours de l'application PizzAI.</p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 3 — Conditions de participation</h2>
+  <ul>
+    <li>Le concours est ouvert à toute personne physique, majeure ou mineure avec autorisation parentale, <strong>résidant en Europe</strong> (Union Européenne, Suisse, Royaume-Uni, Norvège, Islande, Liechtenstein). L'organisateur pourra demander une attestation parentale écrite pour tout gagnant mineur avant l'attribution du lot.</li>
+    <li>La participation est <strong>gratuite</strong> et sans obligation d'achat. Le concours est accessible avec la version gratuite (Free) de l'application.</li>
+    <li>Chaque participant doit disposer d'un compte PizzAI valide (inscription par email ou Google Sign-In).</li>
+    <li><strong>Un seul compte par personne</strong>. La création de comptes multiples entraîne la disqualification immédiate.</li>
+    <li>Les membres du foyer de l'organisateur ne peuvent pas participer.</li>
+  </ul>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 4 — Comment participer</h2>
+  <ol>
+    <li><strong>Télécharger</strong> l'application PizzAI sur Google Play Store ou Apple App Store.</li>
+    <li><strong>Créer un compte</strong> ou se connecter à un compte existant.</li>
+    <li><strong>Préparer une pizza</strong> (ou une tarte flambée).</li>
+    <li><strong>Analyser sa pizza</strong> avec la fonctionnalité Photo IA de l'application.</li>
+    <li>Le score attribué par l'IA est automatiquement enregistré dans le classement du concours.</li>
+  </ol>
+  <p>Aucune action supplémentaire n'est requise (pas de publication sur les réseaux sociaux, pas de tag, pas de like).</p>
+  <p>Les photos doivent représenter une pizza (ou tarte flambée) <strong>préparée par le participant</strong>. L'organisateur se réserve le droit de demander une preuve de réalisation (photo de la préparation, vidéo) en cas de doute sur l'authenticité d'une participation.</p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 5 — Système de scoring</h2>
+
+  <div class="highlight">
+    <h3>Score total = Points Photo + Points Parrainage</h3>
+  </div>
+
+  <h3>5.1 — Points Photo</h3>
+  <p>Chaque analyse Photo IA attribue un score de <strong>1 à 5</strong> évaluant cinq critères : cuisson, corniche, forme, garniture et aspect général.</p>
+  <p>Les points photo sont calculés ainsi :</p>
+  <p><strong>Points Photo = 10 × score Photo IA</strong></p>
+  <p>Exemples : un score de 3.5/5 = 35 points ; un score de 4.8/5 = 48 points.</p>
+  <p><strong>Seul le meilleur score obtenu sur l'ensemble de la période du concours est retenu.</strong> Les participants peuvent analyser autant de pizzas qu'ils le souhaitent (dans la limite de leur quota quotidien) ; seul le score le plus élevé compte.</p>
+
+  <h3>5.2 — Points Parrainage</h3>
+  <p>Chaque participant dispose d'un <strong>code parrainage unique</strong> affiché dans l'écran du concours.</p>
+  <p>Un parrainage est validé lorsque le filleul :</p>
+  <ol>
+    <li>Installe l'application PizzAI.</li>
+    <li>Crée un compte en saisissant le code parrainage à l'inscription.</li>
+    <li>Effectue au moins <strong>une action réelle</strong> dans l'application (lancer un calcul de pâte, envoyer un message au Chef IA, ou analyser une photo).</li>
+  </ol>
+  <p><strong>Points Parrainage = 15 × nombre de filleuls vérifiés</strong></p>
+  <p>Un maximum de <strong>20 parrainages</strong> est pris en compte dans le calcul des points du concours (soit 300 points maximum de parrainage). Les parrainages au-delà de 20 restent valides pour les bonus de quota (voir Article 10) mais ne rapportent plus de points au classement.</p>
+
+  <h3>5.3 — Score IA objectif</h3>
+  <p>Le score Photo IA est attribué de manière <strong>automatique et objective</strong> par l'intelligence artificielle de PizzAI (Claude, développé par Anthropic). <strong>Aucun jury humain</strong> n'intervient dans l'attribution des scores. Le score reflète une évaluation visuelle basée sur des critères techniques de la pizza.</p>
+  <p><strong>Les scores attribués par l'IA sont définitifs et ne peuvent faire l'objet d'aucune contestation.</strong></p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 6 — Classement</h2>
+  <p>Le classement est <strong>public et visible en temps réel</strong> dans l'application PizzAI, dans l'écran dédié au concours.</p>
+  <p>Les participants sont classés par <strong>score total décroissant</strong> (points photo + points parrainage).</p>
+
+  <h3>6.1 — Départage en cas d'égalité</h3>
+  <p>En cas d'égalité de score total entre deux ou plusieurs participants, <strong>le participant inscrit en premier au concours l'emporte</strong>. La date et l'heure d'inscription au concours sont enregistrées automatiquement par l'application.</p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 7 — Dotations</h2>
+
+  <div class="prize-box" style="border-color: rgba(212,164,74,0.4);">
+    <div class="emoji">🏆</div>
+    <div>
+      <div class="name">1<sup>er</sup> prix — Ooni Koda 12</div>
+      <div class="detail">Four à pizza portable au gaz — Valeur approximative : 349€ TTC</div>
+    </div>
+  </div>
+
+  <div class="prize-box">
+    <div class="emoji">🥈</div>
+    <div>
+      <div class="name">2<sup>ème</sup> prix — 6 mois d'abonnement Master</div>
+      <div class="detail">Accès complet à toutes les fonctionnalités PizzAI</div>
+    </div>
+  </div>
+
+  <div class="prize-box">
+    <div class="emoji">🥉</div>
+    <div>
+      <div class="name">3<sup>ème</sup> prix — 3 mois d'abonnement Master</div>
+      <div class="detail">Accès complet à toutes les fonctionnalités PizzAI</div>
+    </div>
+  </div>
+
+  <div class="prize-box">
+    <div class="emoji">⭐</div>
+    <div>
+      <div class="name">4<sup>ème</sup> au 10<sup>ème</sup> prix — 1 mois d'abonnement Master</div>
+      <div class="detail">Accès complet à toutes les fonctionnalités PizzAI</div>
+    </div>
+  </div>
+
+  <p style="margin-top: 12px;">Les abonnements Master sont attribués via la fonctionnalité promotionnelle de RevenueCat et expirent automatiquement à la fin de la durée indiquée.</p>
+  <p>Les dotations ne sont ni échangeables, ni remboursables, ni substituables, sauf disposition contraire prévue dans le présent règlement (voir Article 8).</p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 8 — Livraison du lot principal</h2>
+  <p>Le four Ooni Koda 12 est livré gratuitement à l'adresse fournie par le gagnant, dans l'un des pays éligibles (voir Article 3). Les frais de livraison sont intégralement pris en charge par l'organisateur. L'adresse de livraison doit se situer dans un pays éligible ; aucune expédition hors Europe ne sera effectuée.</p>
+  <p>Le gagnant devra fournir une adresse de livraison valide dans un délai de 7 jours après l'annonce des résultats. En l'absence de réponse dans ce délai, le lot est attribué au participant suivant (voir Article 9).</p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 9 — Réclamation des lots</h2>
+  <p>Les gagnants sont informés via l'application PizzAI et, si possible, par email.</p>
+  <p>Chaque gagnant dispose d'un délai de <strong>7 jours calendaires</strong> à compter de l'annonce des résultats pour réclamer son lot en contactant l'organisateur à <a href="/cdn-cgi/l/email-protection#4d2e2223392c2e390d37223f23392826632b3f"><span class="__cf_email__" data-cfemail="89eae6e7fde8eafdc9f3e6fbe7fdece2a7effb">[email&#160;protected]</span></a>.</p>
+  <p>Passé ce délai, le lot non réclamé est <strong>attribué au participant suivant</strong> dans le classement, qui dispose à son tour de 7 jours pour le réclamer.</p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 10 — Système de parrainage et bonus</h2>
+
+  <h3>10.1 — Code parrainage</h3>
+  <p>Chaque utilisateur de PizzAI dispose d'un code parrainage unique, généré automatiquement. Ce code peut être partagé librement. Le champ de saisie du code parrainage est disponible lors de la création de compte dans l'application.</p>
+
+  <h3>10.2 — Bonus pour le filleul (nouvel inscrit)</h3>
+  <p>Le filleul qui s'inscrit avec un code parrainage valide reçoit un bonus unique :</p>
+  <ul>
+    <li><strong>+2 analyses Photo IA</strong> supplémentaires</li>
+    <li><strong>+2 messages Chef IA</strong> supplémentaires</li>
+  </ul>
+  <p>Ce bonus est crédité une seule fois, lors de la validation du parrainage (après la première action du filleul dans l'application).</p>
+
+  <h3>10.3 — Bonus pour le parrain</h3>
+  <p>Le parrain reçoit pour chaque filleul validé :</p>
+  <ul>
+    <li><strong>+1 analyse Photo IA</strong> supplémentaire</li>
+  </ul>
+  <p>Ce bonus est <strong>plafonné à 5 filleuls maximum</strong>. Au-delà de 5 filleuls validés, le parrain ne reçoit plus de bonus de quota supplémentaire.</p>
+  <p>Pendant la durée du concours, chaque filleul validé rapporte également <strong>+15 points au classement</strong> du parrain, dans la limite de <strong>20 parrainages</strong> (soit 300 points maximum de parrainage).</p>
+
+  <h3>10.4 — Permanence du système</h3>
+  <p>Le système de parrainage et les bonus de quota sont <strong>permanents</strong> et restent actifs en dehors des périodes de concours. Seuls les points de classement (+15 pts) sont spécifiques aux périodes de concours actif.</p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 11 — Mesures anti-triche</h2>
+  <p>L'organisateur met en œuvre les mesures suivantes pour garantir l'équité du concours :</p>
+  <ul>
+    <li><strong>Vérification d'identifiant d'appareil</strong> (device ID) pour détecter la création de comptes multiples depuis un même appareil.</li>
+    <li><strong>Vérification d'action réelle</strong> : un parrainage n'est validé que lorsque le filleul effectue au moins une action concrète dans l'application (calcul de pâte, message Chef IA ou analyse photo).</li>
+    <li><strong>Contrôle automatique</strong> : les scores sont attribués par l'intelligence artificielle sans intervention humaine, éliminant tout risque de favoritisme.</li>
+    <li><strong>Un seul compte par participant</strong> : les comptes multiples détectés sont disqualifiés.</li>
+  </ul>
+  <p>L'organisateur se réserve le droit de <strong>disqualifier tout participant</strong> en cas de fraude avérée ou de comportement contraire à l'esprit du concours, sans justification préalable et sans recours possible.</p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 12 — Propriété intellectuelle</h2>
+  <p>Les photos analysées restent la propriété de leurs auteurs. En participant au concours, les participants autorisent l'organisateur à utiliser leur pseudo et leur score dans le classement public de l'application.</p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 13 — Données personnelles</h2>
+  <p>Les données collectées dans le cadre du concours (adresse email, pseudo, scores, code parrainage) sont traitées conformément à la <a href="https://manub81-hash.github.io/pizzai-privacy/">politique de confidentialité</a> de PizzAI et au Règlement Général sur la Protection des Données (RGPD).</p>
+  <p>Les données sont utilisées exclusivement pour le fonctionnement du concours et l'attribution des lots. Elles ne sont pas cédées à des tiers.</p>
+  <p>Conformément au RGPD, chaque participant dispose d'un droit d'accès, de rectification et de suppression de ses données en contactant <a href="/cdn-cgi/l/email-protection#60030f0e14010314201a0f120e14050b4e0612"><span class="__cf_email__" data-cfemail="395a56574d585a4d7943564b574d5c52175f4b">[email&#160;protected]</span></a>.</p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 14 — Responsabilité</h2>
+  <p>L'organisateur ne saurait être tenu responsable en cas de :</p>
+  <ul>
+    <li>Dysfonctionnement technique de l'application, du réseau Internet, ou des services tiers (Firebase, Anthropic, Google Play, Apple App Store).</li>
+    <li>Interruption temporaire ou définitive du concours pour des raisons indépendantes de sa volonté.</li>
+    <li>Force majeure.</li>
+  </ul>
+  <p>L'organisateur se réserve le droit de modifier, prolonger, écourter ou annuler le concours si les circonstances l'exigent, sans qu'il puisse être tenu à une quelconque indemnisation. Le concours pourra notamment être annulé ou reporté si le nombre de participants est jugé insuffisant (minimum 20 participants).</p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 15 — Acceptation du règlement</h2>
+  <p>La participation au concours implique l'acceptation pleine et entière du présent règlement.</p>
+  <p>Le règlement est consultable à tout moment à l'adresse :<br>
+  <a href="https://manub81-hash.github.io/pizzai-privacy/concours.html">https://manub81-hash.github.io/pizzai-privacy/concours.html</a></p>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Article 16 — Droit applicable et litiges</h2>
+  <p>Le présent règlement est soumis au droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux français seront seuls compétents.</p>
+  <p><strong>Le présent règlement fait foi en langue française.</strong> En cas de divergence entre les versions traduites et la version française, la version française prévaut.</p>
+
+  <div class="separator"></div>
+
+  <!-- ═══════════════════════════════════ -->
+  <h2>Résumé des règles</h2>
+  <div class="highlight">
+    <table>
+      <tr><th>Élément</th><th>Détail</th></tr>
+      <tr><td>Durée</td><td>3 semaines</td></tr>
+      <tr><td>Score</td><td>10 × score Photo IA + 15 × filleuls</td></tr>
+      <tr><td>Photo</td><td>Seul le meilleur score compte</td></tr>
+      <tr><td>Score IA</td><td>Automatique, objectif, sans jury</td></tr>
+      <tr><td>Égalité</td><td>Premier inscrit l'emporte</td></tr>
+      <tr><td>1<sup>er</sup> prix</td><td>Ooni Koda 12 (~349€)</td></tr>
+      <tr><td>Livraison</td><td>Europe — livraison gratuite</td></tr>
+      <tr><td>Réclamation</td><td>7 jours, sinon → suivant</td></tr>
+      <tr><td>Bonus filleul</td><td>+2 Photo IA + 2 Chef IA (1 fois)</td></tr>
+      <tr><td>Bonus parrain</td><td>+1 Photo IA / filleul (max 5 pour quota)</td></tr>
+      <tr><td>Pts parrainage</td><td>+15 pts / filleul (max 20 = 300 pts)</td></tr>
+      <
