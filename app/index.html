@@ -9,7 +9,6 @@
   <meta property="og:description" content="Calcule ta pâte, pose tes questions au Chef IA, analyse tes pizzas par photo. Gratuit !">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zorntek.fr/app">
-
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -46,36 +45,14 @@
     .feature { font-size: 14px; color: #8a7e6d; }
     .feature span { display: block; font-size: 28px; margin-bottom: 6px; }
   </style>
-
-  <script>
-    (function() {
-      var ua = navigator.userAgent || '';
-      var isAndroid = /android/i.test(ua);
-      var isIOS = /iphone|ipad|ipod/i.test(ua);
-
-      var playUrl = 'https://play.google.com/store/apps/details?id=com.zorntek.pizzai';
-      // TODO: remplacer par l'URL App Store quand iOS sera live
-      var appStoreUrl = playUrl;
-
-      setTimeout(function() {
-        if (isAndroid) {
-          window.location.replace(playUrl);
-        } else if (isIOS) {
-          window.location.replace(appStoreUrl);
-        }
-      }, 500);
-    })();
-  </script>
 </head>
 <body>
   <div class="container">
     <div class="logo">🍕</div>
     <h1>Pizz<span>AI</span></h1>
     <p class="tagline">L'assistant intelligent<br>pour des pizzas parfaites</p>
-
-    <div class="spinner"></div>
-    <p class="redirect-text">Redirection vers le store...</p>
-
+    <div class="spinner" id="spinner"></div>
+    <p class="redirect-text" id="redirect-text">Redirection vers le store...</p>
     <div class="buttons">
       <a href="https://play.google.com/store/apps/details?id=com.zorntek.pizzai" class="btn btn-android">
         ▶ Google Play
@@ -85,7 +62,6 @@
          App Store (bientôt)
       </a>
     </div>
-
     <div class="features">
       <div class="feature"><span>🧮</span>Calculateur</div>
       <div class="feature"><span>👨‍🍳</span>Chef IA</div>
@@ -93,5 +69,28 @@
       <div class="feature"><span>🌍</span>5 langues</div>
     </div>
   </div>
+  <script>
+    var ua = navigator.userAgent || '';
+    var isAndroid = /android/i.test(ua);
+    var isIOS = /iphone|ipad|ipod/i.test(ua);
+    var playUrl = 'https://play.google.com/store/apps/details?id=com.zorntek.pizzai';
+    var appStoreUrl = playUrl;
+
+    if (isAndroid || isIOS) {
+      var target = isAndroid ? playUrl : appStoreUrl;
+      // Tentative 1 : intent Android (ouvre directement le Play Store app)
+      if (isAndroid) {
+        window.location.href = 'intent://details?id=com.zorntek.pizzai#Intent;scheme=market;package=com.android.vending;end';
+      }
+      // Fallback après 1.5s si l'intent n'a pas fonctionné
+      setTimeout(function() {
+        window.location.href = target;
+      }, 1500);
+    } else {
+      // Desktop : cacher spinner
+      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('redirect-text').textContent = 'Scannez ou cliquez pour télécharger';
+    }
+  </script>
 </body>
 </html>
