@@ -69,28 +69,22 @@
       <div class="feature"><span>🌍</span>5 langues</div>
     </div>
   </div>
-  <script>
-    var ua = navigator.userAgent || '';
-    var isAndroid = /android/i.test(ua);
-    var isIOS = /iphone|ipad|ipod/i.test(ua);
-    var playUrl = 'https://play.google.com/store/apps/details?id=com.zorntek.pizzai';
-    var appStoreUrl = playUrl;
+<script>
+  var ua = navigator.userAgent || '';
+  var isAndroid = /android/i.test(ua);
+  var isIOS = /iphone|ipad|ipod/i.test(ua);
+  var playUrl = 'https://play.google.com/store/apps/details?id=com.zorntek.pizzai';
 
-    if (isAndroid || isIOS) {
-      var target = isAndroid ? playUrl : appStoreUrl;
-      // Tentative 1 : intent Android (ouvre directement le Play Store app)
-      if (isAndroid) {
-        window.location.href = 'intent://details?id=com.zorntek.pizzai#Intent;scheme=market;package=com.android.vending;end';
-      }
-      // Fallback après 1.5s si l'intent n'a pas fonctionné
-      setTimeout(function() {
-        window.location.href = target;
-      }, 1500);
-    } else {
-      // Desktop : cacher spinner
-      document.getElementById('spinner').style.display = 'none';
-      document.getElementById('redirect-text').textContent = 'Scannez ou cliquez pour télécharger';
-    }
-  </script>
+  if (isAndroid) {
+    document.getElementById('redirect-text').textContent = 'Redirection vers Google Play...';
+    setTimeout(function() { window.location.href = playUrl; }, 2000);
+  } else if (isIOS) {
+    document.getElementById('redirect-text').textContent = 'Redirection vers l\'App Store...';
+    // TODO: remplacer par l'URL App Store quand iOS sera live
+  } else {
+    document.getElementById('spinner').style.display = 'none';
+    document.getElementById('redirect-text').textContent = 'Scannez ou cliquez pour télécharger';
+  }
+</script>
 </body>
 </html>
