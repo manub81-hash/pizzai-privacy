@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PizzAI — Télécharger l'app</title>
   <meta name="description" content="PizzAI - L'assistant intelligent pour des pizzas parfaites. Calculateur, Chef IA, Analyse photo.">
-
-  <!-- Open Graph pour les partages -->
   <meta property="og:title" content="PizzAI — Ton pizzaiolo intelligent">
   <meta property="og:description" content="Calcule ta pâte, pose tes questions au Chef IA, analyse tes pizzas par photo. Gratuit !">
   <meta property="og:type" content="website">
@@ -20,32 +18,33 @@
       min-height: 100vh; display: flex; align-items: center; justify-content: center;
       text-align: center; padding: 24px;
     }
-    .container { max-width: 400px; }
-    .logo { font-size: 60px; margin-bottom: 16px; }
-    h1 { font-size: 32px; font-weight: 800; margin-bottom: 4px; }
+    .container { max-width: 440px; width: 100%; }
+    .logo { font-size: 80px; margin-bottom: 20px; }
+    h1 { font-size: 42px; font-weight: 800; margin-bottom: 6px; letter-spacing: -1px; }
     h1 span { color: #d4a44a; }
-    .tagline { font-size: 14px; color: #8a7e6d; margin-bottom: 32px; }
+    .tagline { font-size: 17px; color: #8a7e6d; margin-bottom: 36px; line-height: 1.4; }
     .spinner {
-      width: 32px; height: 32px; border: 3px solid #d4a44a20;
+      width: 36px; height: 36px; border: 3px solid #d4a44a20;
       border-top-color: #d4a44a; border-radius: 50%;
-      animation: spin 0.8s linear infinite; margin: 0 auto 16px;
+      animation: spin 0.8s linear infinite; margin: 0 auto 14px;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .redirect-text { font-size: 13px; color: #8a7e6d; margin-bottom: 32px; }
+    .redirect-text { font-size: 14px; color: #8a7e6d; margin-bottom: 36px; }
+    .buttons { display: flex; flex-direction: column; gap: 12px; align-items: center; }
     .btn {
-      display: inline-block; padding: 14px 32px; border-radius: 12px;
-      font-size: 15px; font-weight: 700; text-decoration: none;
-      margin: 6px; transition: opacity 0.2s;
+      display: block; width: 100%; max-width: 300px; padding: 16px 32px; border-radius: 14px;
+      font-size: 17px; font-weight: 700; text-decoration: none;
+      transition: opacity 0.2s; text-align: center;
     }
     .btn:hover { opacity: 0.85; }
     .btn-android { background: #d4a44a; color: #1a1410; }
-    .btn-ios { background: #333; color: #f5f0e8; border: 1px solid #555; }
-    .or { color: #8a7e6d; font-size: 12px; margin: 12px 0; }
+    .btn-ios { background: #222; color: #f5f0e8; border: 1px solid #444; }
+    .or { color: #8a7e6d; font-size: 13px; }
     .features {
-      margin-top: 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      margin-top: 40px; display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
     }
-    .feature { font-size: 12px; color: #8a7e6d; }
-    .feature span { display: block; font-size: 20px; margin-bottom: 4px; }
+    .feature { font-size: 14px; color: #8a7e6d; }
+    .feature span { display: block; font-size: 28px; margin-bottom: 6px; }
   </style>
 
   <script>
@@ -58,12 +57,13 @@
       // TODO: remplacer par l'URL App Store quand iOS sera live
       var appStoreUrl = playUrl;
 
-      if (isAndroid) {
-        window.location.href = playUrl;
-      } else if (isIOS) {
-        window.location.href = appStoreUrl;
-      }
-      // Desktop: affiche la page avec les 2 boutons
+      setTimeout(function() {
+        if (isAndroid) {
+          window.location.replace(playUrl);
+        } else if (isIOS) {
+          window.location.replace(appStoreUrl);
+        }
+      }, 500);
     })();
   </script>
 </head>
@@ -71,16 +71,16 @@
   <div class="container">
     <div class="logo">🍕</div>
     <h1>Pizz<span>AI</span></h1>
-    <p class="tagline">L'assistant intelligent pour des pizzas parfaites</p>
+    <p class="tagline">L'assistant intelligent<br>pour des pizzas parfaites</p>
 
     <div class="spinner"></div>
     <p class="redirect-text">Redirection vers le store...</p>
 
-    <div>
+    <div class="buttons">
       <a href="https://play.google.com/store/apps/details?id=com.zorntek.pizzai" class="btn btn-android">
         ▶ Google Play
       </a>
-      <div class="or">ou</div>
+      <span class="or">ou</span>
       <a href="https://play.google.com/store/apps/details?id=com.zorntek.pizzai" class="btn btn-ios">
          App Store (bientôt)
       </a>
