@@ -1,134 +1,364 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PizzAI — Conditions Générales d'Utilisation</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', sans-serif; background: #1a1410; color: #f5e6d3; line-height: 1.7; }
-    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
-    .logo { text-align: center; margin-bottom: 40px; }
-    .logo span { font-size: 48px; }
-    .logo h1 { font-size: 28px; font-weight: 700; color: #e85d24; margin-top: 8px; }
-    .logo p { font-size: 14px; color: #a89480; margin-top: 4px; }
-    h2 { font-size: 20px; font-weight: 700; color: #e85d24; margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(232,93,36,0.2); }
-    h3 { font-size: 16px; font-weight: 700; color: #f5e6d3; margin: 20px 0 8px; }
-    p, li { font-size: 15px; color: #c4b5a4; margin-bottom: 8px; }
-    ul { padding-left: 20px; margin-bottom: 12px; }
-    li { margin-bottom: 4px; }
-    a { color: #e85d24; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .date { text-align: center; font-size: 13px; color: #a89480; margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(168,148,128,0.2); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>PizzAI — Conditions Générales d'Utilisation</title>
+    <meta name="description" content="Conditions générales d'utilisation de l'application PizzAI, éditée par ZornTek.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-card: #161618;
+            --border: #222225;
+            --border-subtle: #1a1a1d;
+            --text-primary: #e8e6e3;
+            --text-secondary: #8a8a8f;
+            --text-tertiary: #5a5a5f;
+            --accent: #c9a96e;
+            --accent-dim: rgba(201, 169, 110, 0.08);
+            --font-display: 'Cormorant Garamond', 'Georgia', serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        ::selection { background: var(--accent); color: var(--bg-primary); }
+        a { color: var(--accent); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: #dfc28a; }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.5;
+        }
+
+        nav {
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(10, 10, 11, 0.88);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-logo span { color: var(--accent); }
+
+        .nav-back {
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-back:hover { color: var(--text-primary); }
+
+        .page-header {
+            text-align: center;
+            padding: 5rem 2rem 3rem;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -10%; left: 50%;
+            transform: translateX(-50%);
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 65%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .page-header .icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .page-header h1 em { font-style: italic; color: var(--accent); }
+
+        .page-header .subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h3 {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 1.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            line-height: 1.85;
+        }
+
+        ul {
+            margin: 0.5rem 0 1.2rem 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        ul li {
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        .highlight { color: var(--text-primary); font-weight: 500; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 0.8rem 1rem;
+            background: var(--bg-card);
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 0.7rem 1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        tr:hover td { background: var(--accent-dim); }
+
+        .page-footer {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .page-footer p {
+            font-size: 0.78rem;
+            color: var(--text-tertiary);
+        }
+
+        @media (max-width: 600px) {
+            nav { padding: 1.2rem 1.5rem; }
+            .page-header { padding: 3rem 1.2rem 2rem; }
+            .content { padding: 0 1.2rem 4rem; }
+            table { font-size: 0.78rem; }
+            th, td { padding: 0.5rem 0.6rem; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">
-      <span>🍕</span>
-      <h1>PizzAI</h1>
-      <p>Conditions Générales d'Utilisation</p>
+
+    <nav>
+        <a href="/" class="nav-logo">Zorn<span>Tek</span></a>
+        <a href="/" class="nav-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            Retour
+        </a>
+    </nav>
+
+    <div class="page-header">
+        <span class="icon">🍕</span>
+        <h1>Conditions Générales <em>d'Utilisation</em></h1>
+        <p class="subtitle">Application PizzAI — Éditée par ZornTek</p>
     </div>
 
-    <h2>1. Objet</h2>
-    <p>Les présentes Conditions Générales d'Utilisation (« CGU ») régissent l'utilisation de l'application mobile PizzAI, éditée par ZornTek. En utilisant PizzAI, vous acceptez les présentes CGU dans leur intégralité.</p>
+    <div class="content">
 
-    <h2>2. Description du service</h2>
-    <p>PizzAI est une application de calcul de pâte à pizza intégrant :</p>
-    <ul>
-      <li>Un calculateur de recettes de pâte à pizza</li>
-      <li>Un assistant conversationnel IA (« Chef IA »)</li>
-      <li>Un outil d'analyse de photos de pizzas par IA</li>
-      <li>Un carnet de recettes personnel</li>
-    </ul>
+        <h2>1. Objet</h2>
+        <p>Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation de l'application mobile PizzAI, éditée par <span class="highlight">ZornTek</span>, auto-entrepreneur domicilié en France.</p>
+        <p>L'utilisation de l'application implique l'acceptation pleine et entière des présentes CGU.</p>
 
-    <h2>3. Inscription et compte</h2>
-    <p>L'utilisation de PizzAI nécessite la création d'un compte avec une adresse email et un mot de passe. Vous êtes responsable de la confidentialité de vos identifiants. Tout usage effectué depuis votre compte est réputé effectué par vous.</p>
+        <h2>2. Description du service</h2>
+        <p>PizzAI est une application mobile d'aide à la fabrication de pizza qui propose :</p>
+        <ul>
+            <li>Un <span class="highlight">calculateur de pâte</span> avec profils prédéfinis et protocole guidé</li>
+            <li>Un <span class="highlight">Chef IA</span> conversationnel pour répondre à vos questions culinaires</li>
+            <li>Une <span class="highlight">analyse photo</span> de vos pizzas par intelligence artificielle</li>
+            <li>Un <span class="highlight">carnet de recettes</span> pour sauvegarder vos créations</li>
+        </ul>
 
-    <h2>4. Plans et tarification</h2>
-    <h3>4.1 Plan Free (gratuit)</h3>
-    <ul>
-      <li>3 messages Chef IA par jour (avec publicité avant chaque requête)</li>
-      <li>1 analyse photo par jour (avec publicité avant chaque requête)</li>
-      <li>5 recettes sauvegardées maximum</li>
-      <li>Publicités affichées dans l'application</li>
-    </ul>
+        <h2>3. Plans et tarification</h2>
+        <p>L'application propose trois niveaux d'accès :</p>
 
-    <h3>4.2 Plan Pro (2,99 €/mois)</h3>
-    <ul>
-      <li>20 messages Chef IA par jour, sans publicité</li>
-      <li>3 analyses photo par jour, sans publicité</li>
-      <li>Recettes illimitées</li>
-      <li>Aucune publicité</li>
-    </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Free</th>
+                    <th>Pro — 2,99€/mois</th>
+                    <th>Master — 5,99€/mois</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight">Chef IA</td>
+                    <td>2/jour</td>
+                    <td>20/jour</td>
+                    <td>60/jour</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Photo IA</td>
+                    <td>1/jour</td>
+                    <td>3/jour</td>
+                    <td>10/jour</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Recettes</td>
+                    <td>3 max</td>
+                    <td>Illimité</td>
+                    <td>Illimité</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Publicités</td>
+                    <td>Oui</td>
+                    <td>Non</td>
+                    <td>Non</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Modèle IA Photo</td>
+                    <td>Standard</td>
+                    <td>Standard</td>
+                    <td>Avancé (Sonnet)</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Historique photos</td>
+                    <td>Non</td>
+                    <td>Oui</td>
+                    <td>Oui</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <h3>4.3 Plan Master (5,99 €/mois)</h3>
-    <ul>
-      <li>60 messages Chef IA par jour, sans publicité</li>
-      <li>10 analyses photo par jour, sans publicité</li>
-      <li>Recettes illimitées</li>
-      <li>Aucune publicité</li>
-    </ul>
+        <p>Les abonnements sont gérés via Google Play Billing (Android) ou l'App Store (iOS). Les prix peuvent varier selon les pays et les taux de conversion appliqués par les plateformes.</p>
 
-    <h2>5. Abonnements et paiement</h2>
-    <p>Les abonnements Pro et Master sont gérés via Google Play Billing. Le paiement est prélevé sur votre compte Google Play au moment de l'achat. L'abonnement se renouvelle automatiquement chaque mois sauf annulation de votre part.</p>
-    <p><strong>Annulation :</strong> Vous pouvez annuler votre abonnement à tout moment depuis les paramètres de votre compte Google Play. L'annulation prend effet à la fin de la période en cours.</p>
-    <p><strong>Remboursement :</strong> Les remboursements sont gérés conformément à la politique de remboursement de Google Play.</p>
+        <h2>4. Abonnements</h2>
+        <h3>4.1 Renouvellement</h3>
+        <p>Les abonnements Pro et Master sont renouvelés automatiquement à chaque période (mensuelle ou annuelle). Vous pouvez annuler à tout moment depuis les paramètres de votre compte Google Play ou App Store.</p>
 
-    <h2>6. Intelligence artificielle</h2>
-    <p>Le Chef IA et l'Analyse Photo utilisent des modèles d'intelligence artificielle (Claude Haiku, par Anthropic). Les réponses générées par l'IA sont fournies à titre informatif et ne constituent pas des conseils professionnels.</p>
-    <p><strong>Limitations :</strong></p>
-    <ul>
-      <li>Les réponses de l'IA peuvent contenir des inexactitudes</li>
-      <li>Les scores photo sont indicatifs et subjectifs</li>
-      <li>L'IA ne remplace pas l'expertise d'un pizzaiolo professionnel</li>
-      <li>Les recettes suggérées doivent être adaptées à votre matériel et ingrédients</li>
-    </ul>
+        <h3>4.2 Essai gratuit</h3>
+        <p>Les plans Pro (mensuel et annuel) bénéficient d'un essai gratuit de 3 jours. Si vous n'annulez pas avant la fin de l'essai, l'abonnement sera automatiquement facturé.</p>
 
-    <h2>7. Propriété intellectuelle</h2>
-    <p>L'application PizzAI, son code source, son design, ses contenus et son nom sont la propriété de ZornTek. Toute reproduction, modification ou distribution non autorisée est interdite.</p>
-    <p>Les recettes que vous créez et sauvegardez dans votre carnet vous appartiennent.</p>
+        <h3>4.3 Remboursement</h3>
+        <p>Les demandes de remboursement sont gérées par Google Play ou l'App Store conformément à leurs politiques respectives.</p>
 
-    <h2>8. Utilisation acceptable</h2>
-    <p>Vous vous engagez à ne pas :</p>
-    <ul>
-      <li>Tenter de contourner les limitations du plan Free</li>
-      <li>Utiliser des outils automatisés pour envoyer des requêtes à l'IA</li>
-      <li>Décompiler, désassembler ou procéder au reverse engineering de l'application</li>
-      <li>Partager votre compte avec des tiers</li>
-      <li>Utiliser le service à des fins illégales ou nuisibles</li>
-    </ul>
+        <h2>5. Intelligence artificielle</h2>
+        <h3>5.1 Limitations</h3>
+        <p>Les fonctionnalités IA (Chef IA et Analyse Photo) sont fournies à titre d'aide et de divertissement. Les réponses générées par l'IA sont indicatives et ne constituent pas des conseils professionnels. ZornTek ne garantit pas l'exactitude, l'exhaustivité ou la pertinence des réponses générées.</p>
 
-    <h2>9. Disponibilité du service</h2>
-    <p>ZornTek s'efforce de maintenir le service accessible 24h/24, mais ne garantit pas une disponibilité ininterrompue. Des interruptions peuvent survenir pour maintenance, mise à jour ou en cas de force majeure.</p>
+        <h3>5.2 Sous-traitant IA</h3>
+        <p>Les fonctionnalités IA sont propulsées par les modèles Claude d'Anthropic. Les messages et photos envoyés sont traités par Anthropic conformément à leur politique de confidentialité.</p>
 
-    <h2>10. Limitation de responsabilité</h2>
-    <p>ZornTek ne saurait être tenu responsable :</p>
-    <ul>
-      <li>Des résultats obtenus avec les recettes calculées ou suggérées par l'IA</li>
-      <li>De toute allergie, intolérance ou problème de santé lié à la préparation de pizzas</li>
-      <li>De la perte de données en cas de dysfonctionnement technique</li>
-      <li>Des dommages indirects liés à l'utilisation du service</li>
-    </ul>
+        <h2>6. Propriété intellectuelle</h2>
+        <p>L'application PizzAI, son code source, son design, ses textes et ses fonctionnalités sont la propriété exclusive de ZornTek. Toute reproduction, distribution ou modification non autorisée est interdite.</p>
+        <p>Les recettes que vous créez et sauvegardez dans l'application restent votre propriété.</p>
 
-    <h2>11. Données personnelles</h2>
-    <p>Le traitement de vos données personnelles est décrit dans notre <a href="https://manub81-hash.github.io/pizzai-privacy/">Politique de Confidentialité</a>.</p>
+        <h2>7. Utilisation acceptable</h2>
+        <p>L'utilisateur s'engage à :</p>
+        <ul>
+            <li>Utiliser l'application conformément à sa destination (aide à la fabrication de pizza)</li>
+            <li>Ne pas tenter de contourner les limitations d'usage ou les mécanismes de paiement</li>
+            <li>Ne pas utiliser le Chef IA pour générer du contenu illicite, haineux ou inapproprié</li>
+            <li>Ne pas soumettre à l'analyse photo des images sans rapport avec la pizza ou à caractère inapproprié</li>
+            <li>Ne pas procéder au reverse engineering, à la décompilation ou au désassemblage de l'application</li>
+        </ul>
 
-    <h2>12. Modification des CGU</h2>
-    <p>ZornTek se réserve le droit de modifier les présentes CGU. Les utilisateurs seront informés de toute modification substantielle via l'application. La poursuite de l'utilisation après modification vaut acceptation des nouvelles CGU.</p>
+        <h2>8. Limitation de responsabilité</h2>
+        <p>ZornTek met tout en œuvre pour assurer la disponibilité et le bon fonctionnement de l'application. Toutefois, ZornTek ne peut être tenu responsable :</p>
+        <ul>
+            <li>Des interruptions temporaires de service pour maintenance ou mise à jour</li>
+            <li>Des résultats ou conseils fournis par les fonctionnalités IA</li>
+            <li>De l'utilisation faite par l'utilisateur des informations fournies par l'application</li>
+            <li>Des problèmes liés aux réseaux de télécommunication ou aux appareils des utilisateurs</li>
+        </ul>
 
-    <h2>13. Résiliation</h2>
-    <p>ZornTek se réserve le droit de suspendre ou supprimer un compte en cas de violation des présentes CGU, notamment en cas d'utilisation abusive du service ou de tentative de fraude.</p>
+        <h2>9. Données personnelles</h2>
+        <p>Le traitement des données personnelles est décrit dans notre <a href="/privacy.html">Politique de Confidentialité</a>.</p>
 
-    <h2>14. Droit applicable</h2>
-    <p>Les présentes CGU sont soumises au droit français. Tout litige sera soumis aux tribunaux compétents du ressort du siège social de ZornTek.</p>
+        <h2>10. Modification des CGU</h2>
+        <p>ZornTek se réserve le droit de modifier les présentes CGU à tout moment. Les utilisateurs seront informés des modifications substantielles via une notification dans l'application. La poursuite de l'utilisation de l'application après notification vaut acceptation des nouvelles CGU.</p>
 
-    <h2>15. Contact</h2>
-    <p>Pour toute question :<br>
-    📧 <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a></p>
+        <h2>11. Droit applicable</h2>
+        <p>Les présentes CGU sont soumises au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
 
-    <div class="date">Dernière mise à jour : 28 février 2026</div>
-  </div>
+        <h2>12. Contact</h2>
+        <p>Pour toute question relative aux présentes CGU, contactez-nous à <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a>.</p>
+
+    </div>
+
+    <div class="page-footer">
+        <p>Dernière mise à jour : 28 mars 2026</p>
+        <p>ZornTek — <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a></p>
+    </div>
+
 </body>
 </html>
