@@ -3,131 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>PizzAI — Politique de Confidentialité</title>
+    <meta name="description" content="Politique de confidentialité de l'application PizzAI, éditée par ZornTek.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-card: #161618;
+            --border: #222225;
+            --border-subtle: #1a1a1d;
+            --text-primary: #e8e6e3;
+            --text-secondary: #8a8a8f;
+            --text-tertiary: #5a5a5f;
+            --accent: #c9a96e;
+            --accent-dim: rgba(201, 169, 110, 0.08);
+            --font-display: 'Cormorant Garamond', 'Georgia', serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #1a1410;
-            color: #e8e0d4;
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.7;
-            padding: 0;
         }
 
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 40px 24px 60px;
+        ::selection { background: var(--accent); color: var(--bg-primary); }
+        a { color: var(--accent); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: #dfc28a; }
+
+        /* Film grain */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.5;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 48px;
+        /* Nav */
+        nav {
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(10, 10, 11, 0.88);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .header .emoji {
-            font-size: 48px;
-            display: block;
-            margin-bottom: 8px;
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
         }
+        .nav-logo span { color: var(--accent); }
 
-        .header h1 {
-            font-size: 28px;
-            color: #d4a44a;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .header .subtitle {
-            font-size: 18px;
-            color: #b8a88a;
+        .nav-back {
+            font-size: 0.78rem;
             font-weight: 400;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-back:hover { color: var(--text-primary); }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            padding: 5rem 2rem 3rem;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -10%; left: 50%;
+            transform: translateX(-50%);
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 65%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .page-header .icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .page-header h1 em { font-style: italic; color: var(--accent); }
+
+        .page-header .subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* Content */
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
         }
 
         h2 {
-            font-size: 20px;
-            color: #d4a44a;
-            margin-top: 36px;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid rgba(212, 164, 74, 0.2);
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
         h3 {
-            font-size: 16px;
-            color: #c9a85c;
-            margin-top: 20px;
-            margin-bottom: 8px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 1.8rem;
+            margin-bottom: 0.6rem;
         }
 
         p {
-            margin-bottom: 12px;
-            color: #d0c8b8;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            line-height: 1.85;
         }
 
         ul {
-            margin: 8px 0 16px 24px;
-            color: #d0c8b8;
+            margin: 0.5rem 0 1.2rem 1.5rem;
+            color: var(--text-secondary);
         }
 
         ul li {
-            margin-bottom: 6px;
-        }
-
-        a {
-            color: #d4a44a;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
         }
 
         .highlight {
-            color: #e8e0d4;
-            font-weight: 600;
+            color: var(--text-primary);
+            font-weight: 500;
         }
 
-        .footer {
-            margin-top: 48px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(212, 164, 74, 0.2);
+        /* Footer */
+        .page-footer {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            border-top: 1px solid var(--border);
             text-align: center;
-            color: #8a7e6e;
-            font-size: 14px;
         }
 
-        .footer a {
-            color: #b8a88a;
+        .page-footer p {
+            font-size: 0.78rem;
+            color: var(--text-tertiary);
         }
 
-        #suppression {
-            scroll-margin-top: 20px;
+        @media (max-width: 600px) {
+            nav { padding: 1.2rem 1.5rem; }
+            .page-header { padding: 3rem 1.2rem 2rem; }
+            .content { padding: 0 1.2rem 4rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
 
-        <div class="header">
-            <span class="emoji">🍕</span>
-            <h1>PizzAI</h1>
-            <div class="subtitle">Politique de Confidentialité</div>
-        </div>
+    <nav>
+        <a href="/" class="nav-logo">Zorn<span>Tek</span></a>
+        <a href="/" class="nav-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            Retour
+        </a>
+    </nav>
 
-        <!-- 1. Éditeur -->
+    <div class="page-header">
+        <span class="icon">🍕</span>
+        <h1>Politique de <em>Confidentialité</em></h1>
+        <p class="subtitle">Application PizzAI — Éditée par ZornTek</p>
+    </div>
+
+    <div class="content">
+
         <h2>1. Éditeur de l'application</h2>
-        <p>
-            <span class="highlight">ZornTek</span><br>
-            Contact : <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a>
-        </p>
+        <p><span class="highlight">ZornTek</span><br>Contact : <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a></p>
 
-        <!-- 2. Données collectées -->
         <h2>2. Données collectées</h2>
 
         <h3>2.1 Données de compte</h3>
@@ -155,9 +248,8 @@
             <li>Données d'interaction avec les publicités</li>
             <li>Informations techniques sur l'appareil</li>
         </ul>
-        <p>Ces données sont gérées par Google conformément à la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">politique de confidentialité de Google</a>. Les utilisateurs Pro et Master ne voient aucune publicité.</p>
+        <p>Ces données sont gérées par Google conformément à la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité de Google</a>. Les utilisateurs Pro et Master ne voient aucune publicité.</p>
 
-        <!-- 3. Finalité -->
         <h2>3. Finalité du traitement</h2>
         <ul>
             <li><span class="highlight">Authentification</span> : vous identifier et sécuriser votre compte</li>
@@ -168,7 +260,6 @@
             <li><span class="highlight">Amélioration</span> : comprendre l'usage global de l'application (statistiques anonymisées)</li>
         </ul>
 
-        <!-- 4. Sous-traitants -->
         <h2>4. Sous-traitants</h2>
         <ul>
             <li><span class="highlight">Firebase (Google)</span> — authentification, base de données, stockage de fichiers (photos), hébergement des fonctions cloud</li>
@@ -178,7 +269,6 @@
         </ul>
         <p>Tous nos sous-traitants sont conformes au RGPD et/ou disposent de clauses contractuelles types.</p>
 
-        <!-- 5. Durée de conservation -->
         <h2>5. Durée de conservation</h2>
         <ul>
             <li><span class="highlight">Données de compte</span> : conservées tant que le compte est actif, supprimées dans les 30 jours suivant la suppression du compte</li>
@@ -187,7 +277,6 @@
             <li><span class="highlight">Photos</span> : conservées dans votre historique tant que le compte est actif, supprimables individuellement depuis l'application</li>
         </ul>
 
-        <!-- 6. Vos droits -->
         <h2>6. Vos droits</h2>
         <p>Conformément au RGPD, vous disposez des droits suivants :</p>
         <ul>
@@ -199,17 +288,14 @@
         </ul>
         <p>Pour exercer ces droits, contactez-nous à <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a>.</p>
 
-        <!-- 7. Sécurité -->
         <h2>7. Sécurité</h2>
         <p>Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données : chiffrement des communications (HTTPS/TLS), authentification sécurisée, règles d'accès strictes à la base de données, et séparation des clés API sensibles côté serveur.</p>
 
-        <!-- 8. Mineurs -->
         <h2>8. Mineurs</h2>
         <p>PizzAI n'est pas destiné aux enfants de moins de 16 ans. Nous ne collectons pas sciemment de données de mineurs.</p>
 
-        <!-- 9. Suppression -->
         <h2 id="suppression">9. Suppression de compte et des données</h2>
-        <p>Vous pouvez demander la suppression de votre compte et de toutes vos données en envoyant un email à <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a> avec l'objet <strong>"Suppression de compte PizzAI"</strong>.</p>
+        <p>Vous pouvez demander la suppression de votre compte et de toutes vos données en envoyant un email à <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a> avec l'objet <span class="highlight">"Suppression de compte PizzAI"</span>.</p>
         <p>Nous procéderons à la suppression dans un délai de 30 jours. Les données supprimées incluent :</p>
         <ul>
             <li>Adresse email et données de compte</li>
@@ -219,15 +305,15 @@
         </ul>
         <p><em>Note : les données relatives aux transactions peuvent être conservées par Google Play et RevenueCat conformément à leurs politiques respectives.</em></p>
 
-        <!-- 10. Modifications -->
         <h2>10. Modifications</h2>
         <p>Cette politique peut être mise à jour. La date de dernière modification est indiquée ci-dessous. En cas de modification substantielle, une notification sera affichée dans l'application.</p>
 
-        <div class="footer">
-            <p>Dernière mise à jour : 19 mars 2026</p>
-            <p>ZornTek — <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a></p>
-        </div>
-
     </div>
+
+    <div class="page-footer">
+        <p>Dernière mise à jour : 19 mars 2026</p>
+        <p>ZornTek — <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a></p>
+    </div>
+
 </body>
 </html>
