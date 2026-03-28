@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="refresh" content="2;url=https://play.google.com/store/apps/details?id=com.zorntek.pizzai">
+  <meta http-equiv="refresh" id="auto-redirect" content="2;url=https://play.google.com/store/apps/details?id=com.zorntek.pizzai">
   <title>PizzAI — Télécharger l'app</title>
   <meta name="description" content="PizzAI - L'assistant intelligent pour des pizzas parfaites. Calculateur, Chef IA, Analyse photo.">
   <meta property="og:title" content="PizzAI — Ton pizzaiolo intelligent">
   <meta property="og:description" content="Calcule ta pâte, pose tes questions au Chef IA, analyse tes pizzas par photo. Gratuit !">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zorntek.fr/app">
+  <script>
+    var ua = navigator.userAgent || '';
+    var isAndroid = /android/i.test(ua);
+    var isIOS = /iphone|ipad|ipod/i.test(ua);
+    if (!isAndroid) { window.stop(); }
+  </script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -70,22 +76,15 @@
       <div class="feature"><span>🌍</span>5 langues</div>
     </div>
   </div>
-<script>
-  var ua = navigator.userAgent || '';
-  var isAndroid = /android/i.test(ua);
-  var isIOS = /iphone|ipad|ipod/i.test(ua);
-  var playUrl = 'https://play.google.com/store/apps/details?id=com.zorntek.pizzai';
-
-  if (isAndroid) {
-    document.getElementById('redirect-text').textContent = 'Redirection vers Google Play...';
-    setTimeout(function() { window.location.href = playUrl; }, 2000);
-  } else if (isIOS) {
-    document.getElementById('redirect-text').textContent = 'Redirection vers l\'App Store...';
-    // TODO: remplacer par l'URL App Store quand iOS sera live
-  } else {
-    document.getElementById('spinner').style.display = 'none';
-    document.getElementById('redirect-text').textContent = 'Scannez ou cliquez pour télécharger';
-  }
-</script>
+  <script>
+    if (isIOS) {
+      document.getElementById('redirect-text').textContent = 'Redirection vers l\'App Store...';
+      // TODO: remplacer par l'URL App Store quand iOS sera live
+      // setTimeout(function() { window.location.href = appStoreUrl; }, 2000);
+    } else if (!isAndroid) {
+      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('redirect-text').textContent = 'Scannez ou cliquez pour télécharger';
+    }
+  </script>
 </body>
 </html>
