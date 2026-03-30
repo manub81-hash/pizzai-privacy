@@ -104,6 +104,7 @@
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 18px;
             color: #d4a44a;
+            margin-bottom: 16px;
             font-style: italic;
         }
 
@@ -192,6 +193,12 @@
             color: #d4a44a;
             margin: 0;
             font-weight: 400;
+        }
+        .formula-card .formula-detail {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #888;
+            margin-top: 8px;
         }
 
         table {
@@ -298,8 +305,8 @@
         <h2>Article 1 — Organisateur</h2>
         <p>Le concours « #PizzAIChallenge » (ci-après « le Concours ») est organisé par :</p>
         <div class="glass-card">
-            <p><strong>ZornTek — Emmanuel Baldo</strong></p>
-            <p>Micro-entreprise individuelle</p>
+            <p><strong>ZornTek</strong></p>
+            <p>Micro-entreprise — Emmanuel Baldo</p>
             <p>SIRET : [EN COURS D'ATTRIBUTION]</p>
             <p>Siège : Bossendorf, Alsace, France</p>
             <p>Contact : <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a></p>
@@ -360,22 +367,21 @@
         <p>Le score de chaque participant est calculé selon la formule suivante :</p>
 
         <div class="formula-card">
-            <p>Score total = Score IA (/100) + 10 pts × filleuls vérifiés (max 50)</p>
+            <p>Score total = Score IA (/100) + 10 × filleuls vérifiés (max 50)</p>
+            <p class="formula-detail">Score maximum possible : 600 points (100 + 500)</p>
         </div>
 
-        <p><strong>Score Photo IA (0 à 100 points) :</strong> L'intelligence artificielle évalue la pizza selon cinq (5) critères objectifs, chacun noté sur vingt (20) points :</p>
+        <p><strong>Score Photo IA (0 à 100 points) :</strong> L'intelligence artificielle évalue la pizza selon <strong>cinq critères objectifs</strong>, chacun noté sur 20 points :</p>
         <ul>
-            <li><strong>Cuisson</strong> : degré de cuisson, léopardage, uniformité (/20)</li>
-            <li><strong>Corniche</strong> : volume, alvéolage, régularité (/20)</li>
-            <li><strong>Forme</strong> : rondeur, symétrie, épaisseur (/20)</li>
-            <li><strong>Garniture</strong> : répartition, équilibre, quantité (/20)</li>
-            <li><strong>Aspect général</strong> : présentation, appétence visuelle (/20)</li>
+            <li><strong>Cuisson</strong> — uniformité, coloration, temps de cuisson</li>
+            <li><strong>Corniche</strong> — développement, texture, gonflant</li>
+            <li><strong>Forme</strong> — rondeur, régularité, épaisseur</li>
+            <li><strong>Garniture</strong> — répartition, équilibre, qualité visuelle</li>
+            <li><strong>Aspect général</strong> — présentation, appétence, maîtrise globale</li>
         </ul>
-        <p>Le score précis sur 100 est utilisé pour le classement du Concours. Un score simplifié sur 5 est affiché à titre indicatif dans l'application. Seule la meilleure analyse photo de chaque participant est retenue.</p>
+        <p>Seule la meilleure photo de chaque participant est prise en compte pour le classement.</p>
 
-        <p><strong>Points de parrainage (0 à 500 points) :</strong> Chaque participant dispose d'un code parrain unique, généré automatiquement dans l'application. Lorsqu'un nouvel utilisateur installe l'application, crée un compte avec ce code, et effectue au moins une action vérifiable (cf. article 5.3), le parrain reçoit <strong>dix (10) points</strong> supplémentaires. Le nombre de filleuls comptabilisés pour le Concours est plafonné à <strong>cinquante (50)</strong>, soit un maximum de 500 points de parrainage.</p>
-
-        <p><strong>Score maximum théorique :</strong> 100 (photo) + 500 (parrainage) = <strong>600 points</strong>.</p>
+        <p><strong>Points de parrainage (0 à 500 points) :</strong> Chaque participant dispose d'un code parrain unique, généré automatiquement. Lorsqu'un nouvel utilisateur installe l'application, crée un compte avec ce code, et effectue au moins une action vérifiable, le parrain reçoit <strong>10 points</strong> supplémentaires. Le nombre de filleuls comptabilisés pour le concours est plafonné à <strong>cinquante (50)</strong>.</p>
 
         <h3>5.3 — Validation d'un filleul</h3>
         <p>Un filleul est considéré comme « vérifié » lorsque les trois conditions cumulatives suivantes sont remplies :</p>
@@ -384,7 +390,7 @@
             <li>Création d'un compte utilisateur avec un code parrain valide</li>
             <li>Réalisation d'au moins une action : un calcul de recette, un message au Chef IA, ou une analyse photo</li>
         </ol>
-        <p>Les filleuls ne sont pas tenus de participer eux-mêmes au Concours pour être comptabilisés. Un contrôle technique automatique (identifiant d'appareil) empêche l'utilisation de son propre code parrain.</p>
+        <p>Les filleuls ne sont pas tenus de participer eux-mêmes au Concours pour être comptabilisés.</p>
 
         <h3>5.4 — Classement</h3>
         <p>Un classement en temps réel est affiché dans l'application, accessible à tous les participants. Ce classement indique le pseudonyme (prénom et initiale du nom) et le score total de chaque participant.</p>
@@ -436,7 +442,7 @@
 
         <h3>7.1 — Désignation</h3>
         <p>Les gagnants sont les participants occupant les dix (10) premières places du classement à la clôture du Concours, le <strong>[DATE DE FIN]</strong> à 23h59 (heure de Paris).</p>
-        <p>En cas d'égalité de score, le départage s'effectue en faveur du participant ayant soumis sa première analyse photo le plus tôt (date et heure d'inscription au Concours).</p>
+        <p>En cas d'égalité de score, le départage s'effectue en faveur du participant ayant soumis sa première analyse photo le plus tôt.</p>
 
         <h3>7.2 — Notification</h3>
         <p>Les gagnants seront contactés par email dans un délai de <strong>cinq (5) jours ouvrés</strong> suivant la clôture. Les résultats seront également publiés dans l'application et sur <a href="https://instagram.com/pizzai_officiel">@pizzai_officiel</a>.</p>
@@ -451,12 +457,11 @@
         <h2>Article 8 — Lutte contre la fraude</h2>
         <ul>
             <li>Un code parrain ne peut être utilisé qu'une seule fois par compte</li>
-            <li>Un participant ne peut pas utiliser son propre code parrain (contrôle par identifiant d'appareil)</li>
             <li>La création de comptes multiples par une même personne (identifiée par email, appareil ou adresse IP) entraîne la disqualification</li>
             <li>Les filleuls ne sont comptabilisés que s'ils ont effectué au moins une action réelle dans l'application</li>
-            <li>Les points de parrainage sont plafonnés à cinquante (50) filleuls par participant dans le cadre du Concours</li>
+            <li>Les photos de pizzas générées par intelligence artificielle sont détectées et rejetées automatiquement</li>
             <li>L'Organisateur se réserve le droit de demander une preuve d'identité à tout gagnant</li>
-            <li>L'Organisateur se réserve le droit de disqualifier tout participant au comportement manifestement frauduleux, sans préavis ni indemnité</li>
+            <li>L'Organisateur se réserve le droit de disqualifier tout participant au comportement manifestement frauduleux</li>
         </ul>
 
         <!-- ARTICLE 9 -->
@@ -466,56 +471,59 @@
         <p>ZornTek — Emmanuel Baldo — <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a></p>
 
         <h3>9.2 — Données collectées</h3>
-        <p>Adresse email, pseudonyme, identifiant d'appareil (à des fins anti-fraude uniquement), code parrain, score et classement, photographies de pizzas, adresse postale du gagnant du lot physique (livraison uniquement).</p>
+        <p>Adresse email, pseudonyme, code parrain, score et classement, photographies de pizzas, adresse postale du gagnant du lot physique (livraison uniquement).</p>
 
         <h3>9.3 — Finalités</h3>
-        <p>Gestion du Concours, attribution et livraison des dotations, publication du classement, prévention de la fraude. Base légale : exécution du contrat (acceptation du Règlement) et intérêt légitime (lutte contre la fraude).</p>
+        <p>Gestion du Concours, attribution et livraison des dotations, publication du classement. Base légale : exécution du contrat (acceptation du Règlement) et intérêt légitime.</p>
 
         <h3>9.4 — Conservation</h3>
-        <p>Les données sont conservées <strong>six (6) mois</strong> après la clôture du Concours, à l'exception des données nécessaires au respect d'obligations légales de conservation plus longues (notamment comptables et fiscales).</p>
+        <p>Les données sont conservées <strong>six (6) mois</strong> après la clôture du Concours, sauf obligations légales de conservation plus longues.</p>
 
         <h3>9.5 — Droits</h3>
-        <p>Conformément au RGPD (Règlement UE 2016/679) et à la loi Informatique et Libertés du 6 janvier 1978 modifiée, vous disposez des droits d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité et d'opposition. Vous pouvez exercer ces droits par email à <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a>. En cas de réclamation, vous pouvez saisir la <a href="https://www.cnil.fr">Commission Nationale de l'Informatique et des Libertés (CNIL)</a>.</p>
+        <p>Conformément au RGPD et à la loi Informatique et Libertés, vous disposez des droits d'accès, rectification, effacement, limitation, portabilité et opposition. Contact : <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a>. Réclamation possible auprès de la <a href="https://www.cnil.fr">CNIL</a>.</p>
 
         <h3>9.6 — Sous-traitants</h3>
-        <p>Google Firebase (hébergement, authentification — serveurs UE), Anthropic (analyse photo IA — les photographies sont traitées en temps réel et ne sont pas conservées par le sous-traitant), RevenueCat (gestion des abonnements).</p>
+        <p>Google Firebase (hébergement, authentification — serveurs UE), Anthropic (analyse photo IA — photos non conservées), RevenueCat (abonnements).</p>
 
         <!-- ARTICLE 10 -->
         <h2>Article 10 — Propriété intellectuelle</h2>
-        <p>Le participant garantit être l'auteur de la photographie soumise et disposer de l'ensemble des droits nécessaires. Il accorde à l'Organisateur, à titre gratuit et non exclusif, le droit de reproduire et diffuser la photographie à des fins de communication liées au Concours (application, réseaux sociaux, site internet), pour la durée du Concours et les six (6) mois suivants, dans le monde entier.</p>
+        <p>Le participant garantit être l'auteur de la photographie soumise. Il accorde à l'Organisateur le droit de reproduire et diffuser la photographie à des fins de communication liées au Concours, pour la durée du Concours et les six (6) mois suivants.</p>
 
         <!-- ARTICLE 11 -->
         <h2>Article 11 — Responsabilité</h2>
-        <p>L'Organisateur ne saurait être tenu responsable en cas de dysfonctionnement réseau ou technique indépendant de sa volonté, d'interruption temporaire de l'application, d'erreurs ou d'imprécisions de l'évaluation par intelligence artificielle (appréciation automatisée à visée ludique, sans garantie de perfection), de force majeure au sens de l'article 1218 du Code civil, ou d'utilisation frauduleuse des codes parrain par des tiers.</p>
-        <p>L'Organisateur se réserve le droit de modifier, suspendre ou annuler le Concours à tout moment en cas de force majeure, de fraude avérée ou de circonstances exceptionnelles. Toute modification substantielle du présent Règlement sera communiquée aux participants via l'application et le compte Instagram <a href="https://instagram.com/pizzai_officiel">@pizzai_officiel</a>.</p>
+        <p>L'Organisateur ne saurait être tenu responsable en cas de dysfonctionnement réseau ou technique indépendant de sa volonté, d'interruption de l'application, d'erreurs de l'évaluation IA (appréciation automatisée à visée ludique), de force majeure (article 1218 du Code civil), ou d'utilisation frauduleuse des codes parrain par des tiers.</p>
+        <p>L'Organisateur se réserve le droit de modifier, suspendre ou annuler le Concours à tout moment en cas de force majeure ou de fraude avérée.</p>
 
         <!-- ARTICLE 12 -->
         <h2>Article 12 — Fiscalité</h2>
-        <p>En France, les lots en nature issus de jeux-concours dont la valeur unitaire n'excède pas le seuil légal en vigueur ne sont en principe pas soumis à l'impôt sur le revenu pour les gagnants. Les gagnants résidant hors de France sont invités à se renseigner auprès de leur administration fiscale locale. L'Organisateur ne saurait être tenu responsable des obligations fiscales incombant aux gagnants.</p>
+        <p>Les lots en nature issus de jeux-concours ne sont pas soumis à l'impôt sur le revenu pour les résidents français. Les gagnants hors de France sont invités à se renseigner sur leur réglementation locale.</p>
 
         <!-- ARTICLE 13 -->
         <h2>Article 13 — Acceptation</h2>
-        <p>La participation au Concours implique l'acceptation pleine et entière du présent Règlement ainsi que des <a href="https://zorntek.fr/terms.html">Conditions Générales d'Utilisation</a> de l'application PizzAI. Tout non-respect du présent Règlement entraînera la disqualification du participant.</p>
+        <p>La participation au Concours implique l'acceptation pleine et entière du présent Règlement. Tout non-respect entraînera la disqualification.</p>
 
         <!-- ARTICLE 14 -->
         <h2>Article 14 — Dépôt du règlement</h2>
-        <p>Conformément à la loi n° 2014-344 du 17 mars 2014 (dite loi Hamon), le dépôt du règlement auprès d'un commissaire de justice (anciennement huissier) n'est plus obligatoire pour les jeux-concours. Le présent Règlement est librement consultable à l'adresse <a href="https://zorntek.fr/concours.html">zorntek.fr/concours.html</a> et peut être obtenu gratuitement sur simple demande écrite à <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a>.</p>
+        <p>Conformément à la loi n° 2014-344 du 17 mars 2014, le dépôt auprès d'un huissier n'est pas obligatoire. Le présent Règlement est librement consultable à cette adresse et peut être obtenu sur simple demande à <a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a>.</p>
 
         <!-- ARTICLE 15 -->
         <h2>Article 15 — Litiges</h2>
-        <p>Le présent Règlement est soumis au droit français. En cas de litige relatif à l'interprétation ou à l'exécution du présent Règlement, les parties s'engagent à rechercher une solution amiable. À défaut d'accord amiable dans un délai de trente (30) jours, le litige sera soumis à la compétence exclusive des tribunaux de Strasbourg (France), sauf dispositions légales impératives contraires applicables au consommateur.</p>
+        <p>Le présent Règlement est soumis au droit français. Tout litige relatif à l'interprétation ou à l'exécution du présent Règlement sera soumis à la compétence exclusive des tribunaux de Strasbourg (France), après tentative de résolution amiable.</p>
+        <p>Conformément à la réglementation européenne en vigueur, le participant peut soumettre tout litige relatif au Concours à la plateforme de règlement en ligne de la Commission européenne : <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a></p>
 
         <div class="divider"></div>
 
         <div class="footer">
             <p class="footer-brand">Pizz<span>AI</span></p>
-            <p>© 2026 ZornTek — Tous droits réservés</p>
-            <p>
-                <a href="https://zorntek.fr/">Accueil</a>
+            <p>ZornTek — Emmanuel Baldo</p>
+            <p>Bossendorf, Alsace, France</p>
+            <p><a href="mailto:contact@zorntek.fr">contact@zorntek.fr</a></p>
+            <p style="margin-top: 16px;">
+                <a href="https://zorntek.fr/privacy.html">Confidentialité</a>
                 <a href="https://zorntek.fr/terms.html">CGU</a>
-                <a href="https://zorntek.fr/">Confidentialité</a>
                 <a href="https://instagram.com/pizzai_officiel">Instagram</a>
             </p>
+            <p style="margin-top: 12px; color: #444;">© 2026 ZornTek. Tous droits réservés.</p>
         </div>
 
     </div>
